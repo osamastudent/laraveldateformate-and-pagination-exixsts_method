@@ -1,0 +1,31 @@
+</table>
+@if(method_exists($data,'links'))
+<div class="div">
+    
+  {!! $data->links(); !!}
+</div>
+@endif
+
+
+{{$comment->author->username}}
+
+{{$comment->created_at}}
+{{$comment->created_at->diffForHumans()}}
+{{$comment->created_at->format('F j, Y, g:i a')}}
+
+php date---->manual date
+
+
+
+
+use Carbon\Carbon;
+use DateTime;
+public function mydate(){
+    /* $mytime = Carbon::now();
+echo $mytime->toDateTimeString(); */
+$date=new DateTime();
+echo $date->format('F j, Y, g:i a');
+}
+
+<--------------php------->
+<?php echo date('F j, Y, g:i a') ?>
